@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020133623) do
+ActiveRecord::Schema.define(version: 20141020134825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20141020133623) do
     t.integer  "winner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "week"
   end
 
   add_index "matchups", ["away_team_id"], name: "index_matchups_on_away_team_id", using: :btree
