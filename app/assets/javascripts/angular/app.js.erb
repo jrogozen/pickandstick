@@ -9,6 +9,10 @@ app.config(function($routeProvider){
   .when("/users", {
     templateUrl: "<%= asset_path('angular/templates/users.html') %>",
     controller: "UserController"
+  })
+  .when("/matchups/new", {
+    templateUrl: "<%= asset_path('angular/templates/new-matchup.html') %>",
+    controller: "MatchupController"
   });
 
 })
