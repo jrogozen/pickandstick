@@ -12,8 +12,24 @@
   </head>
 
   <body>
-
-    <%= yield %>
+    <header id="header">
+      <div class="row">
+        <div class="small-12 columns">
+          <nav>
+            <ul>
+              <li><a href="/#/">Home</a></li>
+              <li><a href="/#/league">League</a></li>
+              <li><a href="/#/roster">Roster</a></li>
+              <li><a href="/#/matchup/new">Add Matchup</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  
+    <div id="main">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -3,5 +3,6 @@ var app = angular.module("sploogeApp", ['ngResource', 'ngRoute']);
 app.config(function($routeProvider){
   $routeProvider
   .when("/", {
+    templateUrl: "<%= asset_path('angular/templates/league.html') %>"
   });
 })

@@ -1,3 +1,28 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header#header {
+  background: black;
+  padding: 10px 0;
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    a {
+      color: white;
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+}
+
+#main {
+  padding: 20px 0;  
+}
