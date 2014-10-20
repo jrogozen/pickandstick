@@ -1,0 +1,21 @@
+<div class="row">
+
+  <div class="small-12 columns">
+  <h1>Roster (Users)</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users">
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
