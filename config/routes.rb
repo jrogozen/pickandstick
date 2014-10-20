@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get "matchups/get_week" => "matchups#get_week"
+
   resources :users
   resources :matchups
   resources :teams

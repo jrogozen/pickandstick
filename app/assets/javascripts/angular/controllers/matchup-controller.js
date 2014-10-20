@@ -3,9 +3,12 @@ app.controller('MatchupController', ['$scope', 'User', 'Matchup', 'Team', '$loca
 
     $scope.teams = Team.query();
 
+    $scope.team = {
+      week: 1
+    }
+
+
     $scope.newMatchup = function(data) {
-      console.log(data);
-      data.winner_id = 2;
       Matchup.save(data, function() {
         $location.path('/league');
       });

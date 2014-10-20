@@ -1,7 +1,6 @@
 class MatchupsController < ApplicationController
 
   def index
-
     Matchup.all
 
     matchups = Matchup.all.includes(:teams).map do |matchup|
@@ -11,11 +10,9 @@ class MatchupsController < ApplicationController
     matchups = matchups.select{|x| !x.empty?}
 
     render json: matchups
-
   end
 
   def create
-    binding.pry
     matchup = Matchup.create({week: params["week"]})
 
     matchup.teams << Team.find(params["home_team"]["id"])
@@ -24,8 +21,16 @@ class MatchupsController < ApplicationController
     render json: matchup 
   end
 
-  def get_matches_based_on_week(week)
-    params["week"]
+  def get_week
+    find_week = params["week"]
+
+    matchups = Matchup.where(week: find_week).includes(:teams).map do |matchup|
+      matchup.teams
+    end
+
+    matchups = matchups.select{|x| !x.empty?}
+
+    render json: matchups
   end
 
 end
