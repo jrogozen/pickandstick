@@ -4,7 +4,8 @@ app.config(function($routeProvider){
   $routeProvider
 
   .when("/league", {
-    templateUrl: "<%= asset_path('angular/templates/league.html') %>"
+    templateUrl: "<%= asset_path('angular/templates/league.html') %>",
+    controller: "LeagueController"
   })
   .when("/users", {
     templateUrl: "<%= asset_path('angular/templates/users.html') %>",

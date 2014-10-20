@@ -1,23 +1,32 @@
 class MatchupsController < ApplicationController
 
   def index
+    matchups_with_teams = []
+
+    matchups = Matchup.all
+
+    count = 0
+    matchups.each do |match|
+      count = {}
+
+      count[match.id] = match.teams
+      matchups_with_teams << count
+
+      count += 1
+    end
+
+    binding.pry
+
+    render json: matchusps_with_teams
   end
 
   def create
-    
-    matchup = Matchup.new(home_team_id: params["home_team"]["id"], away_team_id: params["away_team"]["id"], home_team_spread: params["home_team_spread"], away_team_spread: params["away_team_spread"])
+    matchup = Matchup.new
 
-    if matchup.valid?
-      matchup.save!
-    end
+    matchup.teams << Team.find(params["home_team"]["id"])
+    matchup.teams << Team.find(params["away_team"]["id"])
 
     render json: matchup 
-  end
-
-  private
-
-  def matchup_params
-    # params.require("matchup").permit("home_team", "away_team", "home_team_spread", "away_team_spread").symbolize_keys
   end
 
 end
