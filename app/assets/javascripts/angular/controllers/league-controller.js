@@ -1,5 +1,5 @@
-app.controller('LeagueController', ['$scope', 'User', 'Matchup', 'Team', '$location',
-  function($scope, User, Matchup, Team, $location) {
+app.controller('LeagueController', ['$scope', '$location', 'User', 'Matchup', 'Team', 'Pick',
+  function($scope, $location, User, Matchup, Team, Pick) {
 
     $scope.weeks = {
       "week 1": 1,
@@ -22,10 +22,16 @@ app.controller('LeagueController', ['$scope', 'User', 'Matchup', 'Team', '$locat
     }
 
     $scope.selected = $scope.weeks["week 1"];
-    
+
     $scope.getWeek = function(selected) {
       Matchup.getWeek({week: selected}, function(data) {
         $scope.show_matches = data;
+      });
+    };
+
+    $scope.setPick = function(pick) {
+      Pick.save(pick, function() {
+        console.log(pick);
       });
     };
 

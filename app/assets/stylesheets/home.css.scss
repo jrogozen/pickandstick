@@ -30,4 +30,29 @@ header#header {
 .matchup {
   border-bottom: 1px solid black;
   margin-bottom: 20px;
+  table {
+    float: left;
+    margin-right: 20px;
+    th {
+      width: 200px;
+    }
+    .pick {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.user-bar {
+  text-align: right;
+  color: white;
+}
+#user_nav {
+  a {
+    color: white;
+    &:hover {
+      color: orange;
+    }
+  }
 }

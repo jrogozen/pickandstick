@@ -14,7 +14,7 @@
   <body>
     <header id="header">
       <div class="row">
-        <div class="small-12 columns">
+        <div class="small-6 columns">
           <nav>
             <ul>
               <li><a href="/#/league">League</a></li>
@@ -22,6 +22,15 @@
               <li><a href="/#/matchups/new">Add Matchup</a></li>
             </ul>
           </nav>
+        </div>
+        <div class="user-bar small-6 columns">
+          <div id="user_nav">
+            <% if current_user %>
+              <%= link_to "Hi, #{current_user.username}", "#/users/profile" %>
+            <% else %>
+              <a href="#/users/login" >Login</a>
+            <% end %>
+          </div>
         </div>
       </div>
     </header>

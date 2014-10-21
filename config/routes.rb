@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get "matchups/get_week" => "matchups#get_week"
+  get "logout" => "sessions#destroy", :as => "logout"
+  post "login" => "sessions#create", :as => "login"
+
+  get "current-user" => "sessions#get_info"
 
   resources :users
   resources :matchups

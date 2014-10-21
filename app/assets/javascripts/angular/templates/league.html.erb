@@ -1,27 +1,27 @@
-  <div class="row collapse">
-    <form ng-submit="getWeek(selected)">
-      <div class="small-4 columns">
-        <select ng-model="selected" ng-options="key for (key, value) in weeks"></select>
-      </div>
-      <div class="small-8 columns">
-        <input class="button tiny" type="submit" value="search week">
-      </div>
-    </form>
-  </div>
+<div class="row collapse">
+  <form ng-submit="getWeek(selected)">
+    <div class="small-4 columns">
+      <select ng-model="selected" ng-options="key for (key, value) in weeks"></select>
+    </div>
+    <div class="small-8 columns">
+      <input class="button tiny" type="submit" value="search week">
+    </div>
+  </form>
+</div>
 
 <div class="row">
-  <div ng-repeat="matchup in show_matches" class="small-12 columns matchup">
-    <table style="width: 300px;" ng-repeat="team in matchup">
+  <div class="small-12 columns matchup" ng-repeat="matchup in show_matches">
+    <table ng-repeat="team in matchup">
       <thead>
         <tr>
-          <th style="width: 200px;">Team</th>
-          <th style="width: 100px;">Pick</th>
+          <th>Team</th>
+          <th>Pick</th>
         </tr>
       </thead>
       <tbody>
         <tr >
          <td>{{team.name}}</td>
-         <td>choose</td>
+         <td class="pick" ng-click="setPick(team.id)">choose</td>
         </tr>
       </tbody>
     </table>

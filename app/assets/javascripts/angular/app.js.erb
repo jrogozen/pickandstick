@@ -11,6 +11,22 @@ app.config(function($routeProvider){
     templateUrl: "<%= asset_path('angular/templates/users.html') %>",
     controller: "UserController"
   })
+  .when("/users/login", {
+    templateUrl: "<%= asset_path('angular/templates/user-login.html') %>",
+    controller: "UserController"
+  })
+  .when("/users/new", {
+    templateUrl: "<%= asset_path('angular/templates/new-user.html') %>",
+    controller: "UserController"
+  })
+  .when("/users/profile", {
+    templateUrl: "<%= asset_path('angular/templates/my-user-profile.html') %>",
+    controller: "UserController"
+  })
+  .when("/users/:id", {
+    templateUrl: "<%= asset_path('angular/templates/user-profile.html') %>",
+    controller: "UserController"
+  })
   .when("/matchups/new", {
     templateUrl: "<%= asset_path('angular/templates/new-matchup.html') %>",
     controller: "MatchupController"
